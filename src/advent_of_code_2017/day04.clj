@@ -5,7 +5,7 @@
   (map #(s/split % #" ") (s/split (slurp "./data/day04.txt") #"\n")))
 
 (defn is-valid? [passphrase]
-  (every? #(= 1 %) (vals (frequencies passphrase))))
+  (= (count passphrase) (count (set passphrase))))
 
 (defn part-1 [data]
   (count (filter is-valid? data)))
