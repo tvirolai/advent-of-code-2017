@@ -22,22 +22,13 @@ The horror, the inefficiency.
                nextindex
                (update-in newbanks [nextindex] inc))))))
 
-(defn part-1 [data]
-  (loop [round 1
-         seen (set '())
-         current (reallocate data)]
-    (if (contains? seen current)
-      round
-      (recur (inc round)
-             (conj seen current)
-             (reallocate current)))))
-
-(defn part-2 [data]
+(defn solve [data part]
   (loop [round 1
          seen []
          current (reallocate data)]
     (if (> (.indexOf seen current) -1)
-      (- (dec round) (.indexOf seen current))
+      (if (= part 1) round
+        (- (dec round) (.indexOf seen current)))
       (recur (inc round)
              (conj seen current)
              (reallocate current)))))
