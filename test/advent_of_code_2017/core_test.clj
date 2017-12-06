@@ -1,8 +1,6 @@
 (ns advent-of-code-2017.core-test
   (:require [clojure.test :refer :all]
-            [advent-of-code-2017.core :refer :all]
-            [advent-of-code-2017.day01 :as day01]
-            [advent-of-code-2017.day02 :as day02]))
+            [advent-of-code-2017.day01 :as day01]))
 
 (deftest examples
   (testing "Day 1, part 1"

@@ -1,4 +1,4 @@
-(ns advent-of-code-2017.day04
+(ns advent-of-code-2017.day02
   (:require [clojure.string :as s]))
 
 (def input
