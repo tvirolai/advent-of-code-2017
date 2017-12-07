@@ -1,11 +1,11 @@
 (ns advent-of-code-2017.day01
   (:require [clojure.string :as s]))
 
-(def input
+(defn load-input []
   (-> (slurp "./data/day01.txt") s/trim-newline))
 
 (defn part-1 [input]
-  (->> (take (inc (count (cycle input))))
+  (->> (take (inc (count input)) (cycle input))
        (partition-by identity)
        (filter #(> (count %) 1))
        (mapcat drop-last)

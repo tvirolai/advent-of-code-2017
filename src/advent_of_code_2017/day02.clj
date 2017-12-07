@@ -1,11 +1,11 @@
 (ns advent-of-code-2017.day02
   (:require [clojure.string :as s]))
 
-(def input
+(defn load-input []
   (slurp "./data/day02.txt"))
 
 (defn parse-from-string [string]
-  (->> (s/split input #"\n")
+  (->> (s/split string #"\n")
        (map #(s/split % #"\t"))
        (map (fn [line] (reverse (sort (map #(Integer. %) line)))))))
 

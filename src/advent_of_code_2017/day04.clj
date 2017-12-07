@@ -1,7 +1,7 @@
 (ns advent-of-code-2017.day04
   (:require [clojure.string :as s]))
 
-(def input
+(defn load-input []
   (map #(s/split % #" ") (s/split (slurp "./data/day04.txt") #"\n")))
 
 (defn is-valid? [passphrase]
