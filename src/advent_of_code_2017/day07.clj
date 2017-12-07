@@ -1,5 +1,6 @@
 (ns advent-of-code-2017.day07
-  (:require [clojure.string :as s]))
+  (:require [clojure.string :as s]
+            [clojure.set :as cset]))
 
 (def example-input
   "pbga (66)
@@ -32,4 +33,4 @@ cntj (57)")
 
 (defn part-1 [data]
   (let [{entries :entries branches :branches} (parse-data data)]
-    (first (clojure.set/difference (set entries) (set branches)))))
+    (first (cset/difference (set entries) (set branches)))))
