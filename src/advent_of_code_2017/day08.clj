@@ -30,7 +30,6 @@
         registers (map (comp keyword :register) parsed)]
     (zipmap registers (take (count registers) (repeat 0)))))
 
-
 (defn update-state [state instruction]
   (let [testf (parse-cond (:condition instruction))]
     (if (testf state)
